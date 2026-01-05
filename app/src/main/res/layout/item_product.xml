@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Product Image Container -->
+        <FrameLayout
+            android:id="@+id/productImageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#F5F5DC">
+
+            <!-- Product Image (for URLs) -->
+            <ImageView
+                android:id="@+id/ivProductImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <!-- Product Emoji (for emoji products) -->
+            <TextView
+                android:id="@+id/tvProductEmoji"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="90sp"
+                android:text="💎"
+                android:visibility="visible" />
+
+            <!-- Top Icons Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="end"
+                android:background="#66000000">
+
+                <!-- Favorite Icon -->
+                <ImageView
+                    android:id="@+id/ivFavorite"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_heart"
+                    android:padding="6dp"
+                    android:background="@drawable/circle_white_bg"
+                    android:layout_marginEnd="6dp"
+                    android:elevation="4dp" />
+
+                <!-- Delete Icon (Admin only) -->
+                <ImageView
+                    android:id="@+id/ivDelete"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_delete"
+                    android:padding="6dp"
+                    android:background="@drawable/circle_white_bg"
+                    android:elevation="4dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- WhatsApp Icon (Bottom Left) -->
+            <ImageView
+                android:id="@+id/ivWhatsApp"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="bottom|start"
+                android:layout_margin="12dp"
+                android:src="@drawable/ic_whatsapp"
+                android:padding="8dp"
+                android:background="@drawable/circle_white_bg"
+                android:elevation="4dp" />
+
+        </FrameLayout>
+
+        <!-- Product Details Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Product Name -->
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bague en Or"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A1A"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:lineSpacingExtra="2dp" />
+
+            <!-- Product Price -->
+            <TextView
+                android:id="@+id/tvProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 200 MAD"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#D4AF37"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-medium" />
+
+            <!-- Add to Cart Button -->
+            <Button
+                android:id="@+id/btnAddToCart"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="🛒 Ajouter au Panier"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:background="@drawable/button_brown"
+                android:layout_marginTop="12dp"
+                android:elevation="2dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/black">
+
+    <!-- Logo Admin -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔐"
+        android:textSize="80sp"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Titre -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin Access"
+        android:textSize="32sp"
+        android:textColor="@color/primary_brown"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Sous-titre -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Espace réservé aux administrateurs"
+        android:textSize="14sp"
+        android:textColor="@color/gray"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Email Input -->
+    <EditText
+        android:id="@+id/etAdminEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="admin@email.com"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        android:background="@drawable/edittext_admin_background"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/etAdminPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="••••••••"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:background="@drawable/edittext_admin_background"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/btnAdminLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Connexion Admin"
+        style="@style/ButtonPrimary"/>
+
+    <!-- Back Button -->
+    <TextView
+        android:id="@+id/tvBackToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="← Retour"
+        android:textSize="14sp"
+        android:textColor="@color/gray"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

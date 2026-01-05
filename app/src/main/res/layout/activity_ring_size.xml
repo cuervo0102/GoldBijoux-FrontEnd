@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Elegant Header with Back Button -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="0dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_back"
+                    android:padding="10dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:tint="@color/primary_brown"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💍 Guide des Tailles"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_brown"
+                        android:fontFamily="serif"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trouvez votre taille de bague"
+                        android:textSize="12sp"
+                        android:textColor="@color/primary_brown"
+                        android:alpha="0.7"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Instructions Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                android:backgroundTint="#FFF3E0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📱 Instructions:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#8B4513"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1. Placez votre bague sur l'écran\n2. Ajustez le cercle avec les boutons +/-\n3. Le cercle doit correspondre exactement au diamètre intérieur"
+                        android:textSize="13sp"
+                        android:textColor="#6B3410"
+                        android:lineSpacingExtra="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Interactive Circle Measurer -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                android:backgroundTint="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <!-- Circle Display Area -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:background="#FAFAFA"
+                        android:layout_marginBottom="20dp">
+
+                        <!-- Custom Circle View -->
+                        <com.goldbijoux.maboutique.RingCircleView
+                            android:id="@+id/ringCircleView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"/>
+
+                        <!-- Size Display -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="#FFF3E0"
+                            android:padding="12dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="16dp"
+                            android:elevation="4dp">
+
+                            <TextView
+                                android:id="@+id/tvCurrentSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="52"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary_brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Taille FR"
+                                android:textSize="10sp"
+                                android:textColor="#A0522D"/>
+
+                            <TextView
+                                android:id="@+id/tvUSSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="US 6"
+                                android:textSize="12sp"
+                                android:textColor="#8B4513"
+                                android:layout_marginTop="4dp"/>
+                        </LinearLayout>
+
+                        <!-- Diameter Display -->
+                        <TextView
+                            android:id="@+id/tvDiameter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ø 16.6 mm"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary_brown"
+                            android:background="#FFF3E0"
+                            android:padding="8dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="16dp"
+                            android:elevation="4dp"/>
+                    </RelativeLayout>
+
+                    <!-- Size Adjustment Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="16dp">
+
+                        <Button
+                            android:id="@+id/btnDecrease"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:text="−"
+                            android:textSize="32sp"
+                            android:textColor="@android:color/white"
+                            android:backgroundTint="@color/primary_brown"
+                            android:layout_marginEnd="8dp"
+                            app:cornerRadius="12dp"/>
+
+                        <Button
+                            android:id="@+id/btnIncrease"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:text="+"
+                            android:textSize="32sp"
+                            android:textColor="@android:color/white"
+                            android:backgroundTint="#A0522D"
+                            android:layout_marginStart="8dp"
+                            app:cornerRadius="12dp"/>
+                    </LinearLayout>
+
+                    <!-- Quick Size Buttons -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tailles fréquentes:"
+                        android:textSize="14sp"
+                        android:textColor="@color/primary_brown"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btnSize50"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:text="50"
+                            android:textSize="14sp"
+                            android:backgroundTint="#FFF3E0"
+                            android:textColor="@color/primary_brown"
+                            android:layout_marginEnd="4dp"
+                            app:cornerRadius="8dp"
+                            app:strokeColor="@color/primary_brown"
+                            app:strokeWidth="1dp"/>
+
+                        <Button
+                            android:id="@+id/btnSize52"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:text="52"
+                            android:textSize="14sp"
+                            android:backgroundTint="#FFF3E0"
+                            android:textColor="@color/primary_brown"
+                            android:layout_marginHorizontal="4dp"
+                            app:cornerRadius="8dp"
+                            app:strokeColor="@color/primary_brown"
+                            app:strokeWidth="1dp"/>
+
+                        <Button
+                            android:id="@+id/btnSize54"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:text="54"
+                            android:textSize="14sp"
+                            android:backgroundTint="#FFF3E0"
+                            android:textColor="@color/primary_brown"
+                            android:layout_marginHorizontal="4dp"
+                            app:cornerRadius="8dp"
+                            app:strokeColor="@color/primary_brown"
+                            app:strokeWidth="1dp"/>
+
+                        <Button
+                            android:id="@+id/btnSize56"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:text="56"
+                            android:textSize="14sp"
+                            android:backgroundTint="#FFF3E0"
+                            android:textColor="@color/primary_brown"
+                            android:layout_marginStart="4dp"
+                            app:cornerRadius="8dp"
+                            app:strokeColor="@color/primary_brown"
+                            app:strokeWidth="1dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Size Chart Reference -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                android:backgroundTint="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📏 Tableau de Référence"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_brown"
+                        android:layout_marginBottom="12dp"/>
+
+                    <!-- Table Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="#FFF3E0"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="FR"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary_brown"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="US"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary_brown"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ø mm"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary_brown"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="50    —    5.0    —    15.9 mm\n51    —    5.5    —    16.2 mm\n52    —    6.0    —    16.6 mm\n53    —    6.5    —    16.9 mm\n54    —    7.0    —    17.2 mm\n55    —    7.5    —    17.5 mm\n56    —    8.0    —    17.8 mm"
+                        android:textSize="13sp"
+                        android:textColor="#424242"
+                        android:lineSpacingExtra="6dp"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Tips -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                android:backgroundTint="#FFF9E6">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💡 Conseil: Pour une mesure précise, assurez-vous que:\n• L'écran est à 100% de luminosité\n• Le zoom est désactivé\n• Vous mesurez une bague qui vous va bien"
+                    android:textSize="13sp"
+                    android:textColor="#8B4513"
+                    android:padding="16dp"
+                    android:lineSpacingExtra="4dp"/>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Confirm Button -->
+            <Button
+                android:id="@+id/btnConfirmSize"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="✓ Confirmer ma taille"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/primary_brown"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:elevation="4dp"
+                app:cornerRadius="12dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
