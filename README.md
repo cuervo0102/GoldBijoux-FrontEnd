@@ -39,5 +39,10 @@ Admin
 
 
 5. Demo
+   
    <img width="313" height="685" alt="Screenshot 2026-01-05 095423" src="https://github.com/user-attachments/assets/02c7bbf7-278e-4480-8974-ca8fd462e567" />
+   **LOGIN**
+   <img width="313" height="698" alt="Screenshot 2026-01-05 095435" src="https://github.com/user-attachments/assets/ef5f454d-075c-4204-92c0-11cc1fca19b5" />
+   **Register**
+
 
